@@ -6,7 +6,7 @@
 #    By: diwalaku <diwalaku@student.42.fr>            +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/18 17:39:35 by diwalaku      #+#    #+#                  #
-#    Updated: 2023/07/24 13:18:41 by diwalaku      ########   odam.nl          #
+#    Updated: 2023/07/24 15:26:03 by diwalaku      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,9 +42,6 @@ ${NAME}: ${OBJ} ${LIBFT}
 	
 ${LIBFT}:
 	${MAKE} -C libft
-
-${PRINTF}:
-	${MAKE} -C ft_printf
 
 clean:
 		${RM} ${OBJ}
