@@ -3,6 +3,8 @@
 *.d
 *.a
 *.dSYM
+*.ini
 .cache/
 .DS_Store
 /push_swap_visualizer
+/libft
