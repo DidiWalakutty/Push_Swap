@@ -6,7 +6,7 @@
 /*   By: diwalaku <diwalaku@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/06 19:15:17 by diwalaku      #+#    #+#                 */
-/*   Updated: 2023/07/16 19:11:15 by diwalaku      ########   odam.nl         */
+/*   Updated: 2023/07/24 17:54:12 by diwalaku      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // This function creates a new stack that's set to the value of num, and sets 'next' to NULL.
 // Also creates an index of -1 so we can track if it has been indexed in sort_index.
-t_stack	*create_stack(int num)
+t_stack	*create_node(int num)
 {
 	t_stack	*new;
 

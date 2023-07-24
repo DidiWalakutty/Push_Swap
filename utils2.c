@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
+/*   utils2.c                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: diwalaku <diwalaku@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/05/04 22:07:12 by diwalaku      #+#    #+#                 */
-/*   Updated: 2023/07/24 17:57:06 by diwalaku      ########   odam.nl         */
+/*   Created: 2023/07/24 17:56:04 by diwalaku      #+#    #+#                 */
+/*   Updated: 2023/07/24 17:57:14 by diwalaku      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "pushswap.h"
 
-int	main(int argc, char *argv[])
+t_stack	*create_stack(int argc, char **argv)
 {
-	t_stack	*a;
-	t_stack	*b;
 
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (0);
-	a = create_stack(argc, *argv);
-	b = NULL;
-	if (check_arguments(argv, &a) == false)
-		exit_error();
-	if (repeated_found(&a) == true)
-		exit_error();
-	if (check_sorted(&a) == true)
-		return (0);
-	sort_index(&a);
-	sort(&a, &b);
-	return (0);
 }
