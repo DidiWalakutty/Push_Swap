@@ -1,0 +1,8 @@
+# Files to ignore
+*.o
+*.d
+*.a
+*.dSYM
+.cache/
+.DS_Store
+/push_swap_visualizer
