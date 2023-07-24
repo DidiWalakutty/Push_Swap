@@ -6,7 +6,7 @@
 /*   By: diwalaku <diwalaku@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/06/20 19:55:58 by diwalaku      #+#    #+#                 */
-/*   Updated: 2023/07/24 12:49:46 by diwalaku      ########   odam.nl         */
+/*   Updated: 2023/07/24 16:40:05 by diwalaku      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	radix_sort(t_stack **a, t_stack **b)
 				pb(a, b);
 			x++;
 		}
-		while (b)
+		while (*b)
 			pa(b, a);
 		i++;
 	}
