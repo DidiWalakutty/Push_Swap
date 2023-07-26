@@ -6,17 +6,17 @@
 /*   By: diwalaku <diwalaku@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/16 19:11:19 by diwalaku      #+#    #+#                 */
-/*   Updated: 2023/07/26 15:02:16 by diwalaku      ########   odam.nl         */
+/*   Updated: 2023/07/26 20:10:00 by diwalaku      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Find the minimum value among all un-indexed stacks.
-// Checks if current > next and if it's indexed/unassigned or not.
-// If so, current is bigger, so we set it to next since its value is smaller.
-// If current is indexed, we set it to next. When we've done the whole stack and current == -1,
-// we set its index to the current i, since it's the smallest value.
+// Find the smallest un-indexed value in the stack.
+// Compare each element with the next element, checking if the 
+// next element is both smaller and un-indexed.
+// If a smaller un-indexed element is found, set it as the 
+// current smallest value. Skip elements that are already indexed.
 void	sort_index(t_stack **stack)
 {
 	t_stack	*start;

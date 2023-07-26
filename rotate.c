@@ -6,7 +6,7 @@
 /*   By: diwalaku <diwalaku@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/03 13:34:05 by diwalaku      #+#    #+#                 */
-/*   Updated: 2023/07/16 18:18:42 by diwalaku      ########   odam.nl         */
+/*   Updated: 2023/07/26 20:04:45 by diwalaku      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 //	rr - rotate both -	Shift up both at once.
 //						First element becomes the last.
 
-// Last is set to the current first node, which will become the last node.
-// Second_to_last is set to the current last node, which will become the second to last node.
-// Stack is set to the second node, now the head of the list.
-// Last->next = NULL, breaking the link from first in the list and becoming the last node.
-// Second_to_last points to first, eventually being shift one above first node and being the second_to_last in the list.
+// Second_to_last points to the last node, which will become 2nd_to_last node.
+// Last points to the first node, which will become the last node.
+// Stack updates to 2nd node in stack, making it the new head.
+// Break the link from last, so it becomes the last node.
+// 2nd_to_last now points to last, effectively shifting to become 2nd_to_last.
 static void	rotate(t_stack **stack)
 {
 	t_stack	*last;

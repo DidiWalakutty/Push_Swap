@@ -6,14 +6,12 @@
 /*   By: diwalaku <diwalaku@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 19:56:09 by diwalaku      #+#    #+#                 */
-/*   Updated: 2023/07/26 18:46:16 by diwalaku      ########   odam.nl         */
+/*   Updated: 2023/07/26 19:21:16 by diwalaku      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Check if all arguments are digits. If strlen > 11, it's already be bigger than int max/min.
-// Calls atoi to convert them to integers.
 bool	check_digits(char *str, int *num)
 {
 	int	i;
@@ -40,9 +38,10 @@ bool	check_digits(char *str, int *num)
 	return (true);
 }
 
-// INT_MIN is -...648, INT_MAX is +...647, but in case of INT_MIN it won't become a negative, until multx with -1.
-// At first it'll be +...648, so it overflows.
-// the multx=1 check is in case the string is bigger that INT_MAX. It'll also automatically turn num in a negative (overflow).
+// This function converts a string to an integer 
+// and checks for overflow. If the result is INT_MIN, 
+// it uses multx to determine genuine overflow. 
+// If multx is 1, it's an overflow, otherwise, it's INT_MAX.
 bool	atoi_and_overflow(char *str, int *num)
 {
 	int	x;
@@ -71,8 +70,9 @@ bool	atoi_and_overflow(char *str, int *num)
 	return (true);
 }
 
-// This function parses the arguments that are indeed digits and if it converts it from atoi.
-// If so, it'll create and link them to create the stack.
+// This function splits the arguments on the space char, 
+// and checks for digits and converts them to an int.
+// It'll create and link them to create the stack.
 t_stack	*create_and_check(int argc, char **argv, t_stack **a)
 {
 	int		i;
@@ -94,6 +94,9 @@ t_stack	*create_and_check(int argc, char **argv, t_stack **a)
 	return (*a);
 }
 
+// Checks if there's a repeated number.
+// It holds on to 1 node, and compares it to all nodes after it.
+// Sets the current node to the next one, and repeats the cycle.
 bool	repeated_found(t_stack **stack)
 {
 	t_stack	*copy;
@@ -114,7 +117,8 @@ bool	repeated_found(t_stack **stack)
 	return (false);
 }
 
-// We check if the stack is already sorted by checking if the value of copy is > than the one next to it.
+// This functions checks if the stack is already sorted.
+// It checks if the value of copy is > than next.
 // If it's bigger, we know it isn't sorted, since it's not in ascending order.
 bool	check_sorted(t_stack **stack)
 {

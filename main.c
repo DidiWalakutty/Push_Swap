@@ -6,13 +6,13 @@
 /*   By: diwalaku <diwalaku@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/04 22:07:12 by diwalaku      #+#    #+#                 */
-/*   Updated: 2023/07/26 18:00:06 by diwalaku      ########   odam.nl         */
+/*   Updated: 2023/07/26 18:55:00 by diwalaku      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	f()
+void	leaks()
 {
 	system("Leaks push_swap");
 }

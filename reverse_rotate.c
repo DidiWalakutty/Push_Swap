@@ -6,7 +6,7 @@
 /*   By: diwalaku <diwalaku@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/03 17:08:18 by diwalaku      #+#    #+#                 */
-/*   Updated: 2023/07/24 12:48:19 by diwalaku      ########   odam.nl         */
+/*   Updated: 2023/07/26 19:40:34 by diwalaku      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 //	rrr - reverse rotate both -		Shift down both at once.
 //									Last element becomes the first.
 
-// Ultimate_last finds the second to last position, so it can set it to NULL in rev_rotate.
+// Ultimate_last finds the second to last position, 
+// so it can set it to NULL in rev_rotate.
 static t_stack	*ultimate_last(t_stack *stack)
 {
 	while (stack->next->next)
@@ -26,8 +27,10 @@ static t_stack	*ultimate_last(t_stack *stack)
 	return (stack);
 }
 
-// To avoid an infinite loop, add_front is done *after* finding the ultimate_last, so 
-// we can set the ultimate 'last' in stack to NULL, after putting 'top' at first position in stack.
+// If count_stacks <= 1, rev_rot isn't needed.
+// To avoid an infinite loop, add_front is done *after* finding ultimate last.
+// This way, we can eventually set the ultimate 'last' in stack to NULL, 
+// after putting 'top' at first position in stack.
 static void	rev_rotate(t_stack **stack)
 {
 	t_stack	*top;
