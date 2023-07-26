@@ -6,22 +6,15 @@
 /*   By: diwalaku <diwalaku@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/04 22:07:12 by diwalaku      #+#    #+#                 */
-/*   Updated: 2023/07/26 16:27:11 by diwalaku      ########   odam.nl         */
+/*   Updated: 2023/07/26 18:00:06 by diwalaku      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_stack(t_stack **stack)
+void	f()
 {
-	t_stack *temp;
-
-	while (*stack)
-	{
-		temp = *stack;
-		*stack = (*stack)->next;
-		free(temp);
-	}
+	system("Leaks push_swap");
 }
 
 int	main(int argc, char *argv[])
@@ -40,5 +33,6 @@ int	main(int argc, char *argv[])
 	sort_index(&a);
 	sort(&a, &b);
 	free_stack(&a);
+	system("Leaks push_swap");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: diwalaku <diwalaku@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/04 22:07:15 by diwalaku      #+#    #+#                 */
-/*   Updated: 2023/07/26 16:17:26 by diwalaku      ########   odam.nl         */
+/*   Updated: 2023/07/26 17:45:37 by diwalaku      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ t_stack	*create_and_check(int argc, char **argv, t_stack **a);
 
 void	exit_error(void);
 void	free_stack(t_stack **stack);
+void	free_array(char **arr);
 
 // - index and sort - //
 

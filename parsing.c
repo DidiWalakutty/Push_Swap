@@ -6,7 +6,7 @@
 /*   By: diwalaku <diwalaku@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 19:56:09 by diwalaku      #+#    #+#                 */
-/*   Updated: 2023/07/26 16:26:47 by diwalaku      ########   odam.nl         */
+/*   Updated: 2023/07/26 18:46:16 by diwalaku      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,8 @@ t_stack	*create_and_check(int argc, char **argv, t_stack **a)
 		if (check_digits(argv[i], &num) == false)
 			exit_error();
 		link_to_end(a, create_node(num));
-		i++;		
+		free_array(arr);
+		i++;
 	}
 	return (*a);
 }

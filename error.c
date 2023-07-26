@@ -6,7 +6,7 @@
 /*   By: diwalaku <diwalaku@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 17:53:37 by diwalaku      #+#    #+#                 */
-/*   Updated: 2023/07/26 16:27:00 by diwalaku      ########   odam.nl         */
+/*   Updated: 2023/07/26 17:58:01 by diwalaku      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,31 @@
 void	exit_error(void)
 {
 	ft_putstr_fd("Error\n", 2);
-	exit (EXIT_FAILURE);
+	//ft_putstr_fd("Error\n", STDERR_FILENO);
+	exit(EXIT_FAILURE);
+}
+
+void	free_stack(t_stack **stack)
+{
+	t_stack *temp;
+
+	while (*stack) 
+	{
+		temp = *stack;
+		*stack = (*stack)->next;
+		free(temp);
+	}
+}
+
+void	free_array(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
 }

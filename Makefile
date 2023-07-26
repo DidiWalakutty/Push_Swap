@@ -6,7 +6,7 @@
 #    By: diwalaku <diwalaku@student.42.fr>            +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/18 17:39:35 by diwalaku      #+#    #+#                  #
-#    Updated: 2023/07/26 16:17:07 by diwalaku      ########   odam.nl          #
+#    Updated: 2023/07/26 17:59:50 by diwalaku      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,11 @@ OBJ = ${SRCS:.c=.o}
 
 CC = gcc
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g 
+
+# -fsanitize=address
+
+#LDFLAGS = -fsanitize=address
 
 all: ${NAME}
 
