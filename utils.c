@@ -6,7 +6,7 @@
 /*   By: diwalaku <diwalaku@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/06 19:15:17 by diwalaku      #+#    #+#                 */
-/*   Updated: 2023/07/24 17:54:12 by diwalaku      ########   odam.nl         */
+/*   Updated: 2023/07/26 16:25:51 by diwalaku      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ t_stack	*create_node(int num)
 // This function adds the stack created in create_stack to the end.
 // If the stack is empty, we set new as first in stack. 
 // temp is set to last in the stack, and set next to new. Also point new to NULL.
-
 void	link_to_end(t_stack **stack, t_stack *new)
 {
 	t_stack	*temp;

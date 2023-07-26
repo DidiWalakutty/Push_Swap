@@ -6,7 +6,7 @@
 /*   By: diwalaku <diwalaku@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 19:56:09 by diwalaku      #+#    #+#                 */
-/*   Updated: 2023/07/24 17:54:17 by diwalaku      ########   odam.nl         */
+/*   Updated: 2023/07/26 16:26:47 by diwalaku      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,22 +71,26 @@ bool	atoi_and_overflow(char *str, int *num)
 	return (true);
 }
 
-// This function parses the arguments are indeed digits and if it converts it from atoi.
+// This function parses the arguments that are indeed digits and if it converts it from atoi.
 // If so, it'll create and link them to create the stack.
-bool	check_arguments(char **argv, t_stack **stack)
+t_stack	*create_and_check(int argc, char **argv, t_stack **a)
 {
-	int	i;
-	int	num;
+	int		i;
+	int		num;
+	char	**arr;
 
 	i = 1;
-	while (argv[i])
+	while (i < argc)
 	{
+		arr = ft_split(argv[i], ' ');
+		if (!arr || !arr[0])
+			exit_error();
 		if (check_digits(argv[i], &num) == false)
-			return (false);
-		link_to_end(stack, create_node(num));
-		i++;
+			exit_error();
+		link_to_end(a, create_node(num));
+		i++;		
 	}
-	return (true);
+	return (*a);
 }
 
 bool	repeated_found(t_stack **stack)

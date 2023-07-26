@@ -6,7 +6,7 @@
 /*   By: diwalaku <diwalaku@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/17 17:53:37 by diwalaku      #+#    #+#                 */
-/*   Updated: 2023/07/24 14:53:11 by diwalaku      ########   odam.nl         */
+/*   Updated: 2023/07/26 16:27:00 by diwalaku      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	exit_error(void)
 {
-	ft_putstr_fd("Error\n", 1);
+	ft_putstr_fd("Error\n", 2);
 	exit (EXIT_FAILURE);
 }
