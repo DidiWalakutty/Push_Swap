@@ -1,7 +1,8 @@
 NAME = libft.a
 
 SRCS =	ft_isdigit.c ft_strlen.c ft_putchar.c \
-		ft_putstr.c ft_putendl.c ft_putstr_fd.c \
+		ft_putstr_fd.c ft_split.c ft_bzero.c \
+		ft_substr.c ft_calloc.c \
 		
 OBJ = ${SRCS:.c=.o}
 
