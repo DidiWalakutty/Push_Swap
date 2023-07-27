@@ -6,14 +6,15 @@
 #    By: diwalaku <diwalaku@student.42.fr>            +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/18 17:39:35 by diwalaku      #+#    #+#                  #
-#    Updated: 2023/07/26 17:59:50 by diwalaku      ########   odam.nl          #
+#    Updated: 2023/07/27 19:24:27 by diwalaku      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = 		push_swap
-
-LIBFT = 	./libft/libft.a
-LIBFT_FLAG = -I libft
+OBJ_DIR =	obj
+LIBFT_DIR = ./libft
+LIBFT = 	$(LIBFT_DIR)/libft.a
+LIBFT_FLAG = -I $(LIBFT_DIR)
 
 SRCS =	main.c \
 		parsing.c \
@@ -26,36 +27,34 @@ SRCS =	main.c \
 		reverse_rotate.c \
 		error.c \
 		
-OBJ = ${SRCS:.c=.o}
+OBJ = $(patsubst %.c, $(OBJ_DIR)/%.o, $(SRCS))
 
 CC = gcc
+CFLAGS = -Wall -Werror -Wextra
 
-CFLAGS = -Wall -Werror -Wextra -g 
+all: $(NAME)
 
-# -fsanitize=address
-
-#LDFLAGS = -fsanitize=address
-
-all: ${NAME}
-
-${NAME}: ${OBJ} ${LIBFT}
-	${CC} -o $@ $^
-
-%.o: %.c
-	${CC} ${CFLAGS} -c -o $@ ${LIBFT_FLAG} $^
+$(NAME): $(OBJ) $(LIBFT)
+	$(CC) -o $@ $^
 	
-${LIBFT}:
-	${MAKE} -C libft
+$(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c -o $@ $(LIBFT_FLAG) $<
 
+$(LIBFT):
+	$(MAKE) -C $(LIBFT_DIR)
+
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+	
 clean:
-		${RM} ${OBJ}
-		${MAKE} -C libft clean
+		$(RM) -r $(OBJ_DIR)
+		$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean: clean
-		${RM} ${NAME}
-		${MAKE} -C libft fclean
+		$(RM) $(NAME)
+		$(MAKE) -C $(LIBFT_DIR) fclean
 
-re:		fclean ${NAME}
+re:		fclean $(NAME)
 
 visual:
 		./push_swap_visualizer/build/bin/visualizer

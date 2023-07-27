@@ -6,16 +6,11 @@
 /*   By: diwalaku <diwalaku@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/04 22:07:12 by diwalaku      #+#    #+#                 */
-/*   Updated: 2023/07/26 18:55:00 by diwalaku      ########   odam.nl         */
+/*   Updated: 2023/07/27 19:06:05 by diwalaku      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	leaks()
-{
-	system("Leaks push_swap");
-}
 
 int	main(int argc, char *argv[])
 {
@@ -33,6 +28,6 @@ int	main(int argc, char *argv[])
 	sort_index(&a);
 	sort(&a, &b);
 	free_stack(&a);
-	system("Leaks push_swap");
+	// system("leaks push_swap");
 	return (0);
 }

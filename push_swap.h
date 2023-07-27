@@ -6,7 +6,7 @@
 /*   By: diwalaku <diwalaku@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/04 22:07:15 by diwalaku      #+#    #+#                 */
-/*   Updated: 2023/07/26 17:45:37 by diwalaku      ########   odam.nl         */
+/*   Updated: 2023/07/27 13:40:31 by diwalaku      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,4 @@ void	rrr(t_stack **a, t_stack **b);
 void	pa(t_stack **b, t_stack **a);
 void	pb(t_stack **a, t_stack **b);
 
-// // - Print Stacks - //
-
-// void	print_stack(t_stack *stack);
-// void	print_both_stacks(t_stack *stack_a, t_stack *stack_b);
 #endif
